@@ -1,7 +1,6 @@
 #!/bin/sh
 #vim: filetype=zsh
 
-#export FPATH="$FPATH:$ZDOTDIR/Prompts"
 autoload -U colors promptinit
 colors
 promptinit

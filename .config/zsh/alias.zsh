@@ -23,6 +23,7 @@ alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 alias grep='grep --colour=auto'
 alias ls='ls --color=auto --human-readable --classify --group-directories-first'
+alias find='find HE'
 
 
 # Алиасы с su/sudo
