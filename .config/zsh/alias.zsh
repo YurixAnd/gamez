@@ -29,6 +29,7 @@ alias find='find HE'
 # Алиасы с su/sudo
 alias svim='sudo vim'
 alias sless='sudo less'
+alias semerge='sudo emerge'
 
 # Автодополнение алиасов
 setopt completealiases
