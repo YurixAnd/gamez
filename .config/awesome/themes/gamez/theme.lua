@@ -1,0 +1,92 @@
+---------------------------
+-- Awesome theme "Gamez" --
+---------------------------
+
+theme = {}
+
+dir                            = os.getenv("HOME") .. "/.config/awesome/themes/gamez"
+
+theme.font                     = "Ubuntu 11"
+
+theme.wallpaper                = "~/.config/awesome/themes/gamez/background.png"
+theme.wallpaper_one            = "~/.config/awesome/themes/gamez/background_one.jpg"
+theme.wallpaper_two            = "~/.config/awesome/themes/gamez/background_two.png"
+
+theme.grey                     = "#404146"
+theme.black                    = "#141517"
+theme.blue                     = "#4D9CBF"
+theme.green                    = "#008000"
+theme.red                      = "#c73c42"
+theme.lightgrey                = "#505254"
+
+theme.bg_normal                = theme.black
+theme.bg_focus                 = theme.black
+theme.bg_urgent                = theme.black
+theme.bg_minimize              = theme.black
+theme.bg_systray               = theme.black
+
+theme.fg_normal                = theme.lightgrey
+theme.fg_focus                 = theme.green
+theme.fg_urgent                = theme.red
+theme.fg_minimize              = theme.lightgrey
+
+theme.border_width             = 1
+theme.border_normal            = theme.grey
+theme.border_focus             = theme.green
+theme.border_marked            = theme.red
+
+theme.notify_bg                = theme.black
+theme.notify_fg                = theme.green
+theme.notify_border            = theme.grey
+
+-- Display the taglist
+theme.taglist_bg_empty         = "png:" .. dir .. "/icons/green_bubble.png"
+theme.taglist_bg_occupied      = "png:" .. dir .. "/icons/green_circle.png"
+theme.taglist_bg_urgent        = "png:" .. dir .. "/icons/red_circle.png"
+theme.taglist_bg_focus         = "png:" .. dir .. "/icons/orange_circle.png"
+
+-- Variables set for theming the menu:
+theme.menu_submenu_icon        = dir .. "/icons/submenu.png"
+theme.menu_height              = 25
+theme.menu_width               = 120
+
+-- Layout icons
+theme.awesome_icon             = dir .. "/icons/awesome16.png"
+theme.layout_tile              = dir .. "/layouts/tile.png"
+theme.layout_tilebottom        = dir .. "/layouts/tilebottom.png"
+theme.layout_floating          = dir .. "/layouts/floating.png"
+
+theme.english                  = dir .. "/icons/english.png"
+theme.russian                  = dir .. "/icons/russian.png"
+theme.blue_circle              = dir .. "/icons/blue_circle_small.png"
+
+-- Define the icon theme for application icons. If not set then the icons 
+-- from /usr/share/icons and /usr/share/icons/hicolor will be used.
+theme.icon_theme               = nil
+
+-- Define the image to load
+theme.titlebar_close_button_normal              = "png:" .. dir .. "/titlebar/close_normal.png"
+theme.titlebar_close_button_focus               = "png:" .. dir .. "/titlebar/close_focus.png"
+
+theme.titlebar_ontop_button_normal_inactive     = "png:" .. dir ..  "/titlebar/ontop_normal_inactive.png"
+theme.titlebar_ontop_button_focus_inactive      = "png:" .. dir ..  "/titlebar/ontop_focus_inactive.png"
+theme.titlebar_ontop_button_normal_active       = "png:" .. dir ..  "/titlebar/ontop_normal_active.png"
+theme.titlebar_ontop_button_focus_active        = "png:" .. dir ..  "/titlebar/ontop_focus_active.png"
+
+theme.titlebar_sticky_button_normal_inactive    = "png:" .. dir ..  "/titlebar/sticky_normal_inactive.png"
+theme.titlebar_sticky_button_focus_inactive     = "png:" .. dir ..  "/titlebar/sticky_focus_inactive.png"
+theme.titlebar_sticky_button_normal_active      = "png:" .. dir ..  "/titlebar/sticky_normal_active.png"
+theme.titlebar_sticky_button_focus_active       = "png:" .. dir ..  "/titlebar/sticky_focus_active.png"
+
+theme.titlebar_floating_button_normal_inactive  = "png:" .. dir ..  "/titlebar/floating_normal_inactive.png"
+theme.titlebar_floating_button_focus_inactive   = "png:" .. dir ..  "/titlebar/floating_focus_inactive.png"
+theme.titlebar_floating_button_normal_active    = "png:" .. dir ..  "/titlebar/floating_normal_active.png"
+theme.titlebar_floating_button_focus_active     = "png:" .. dir ..  "/titlebar/floating_focus_active.png"
+
+theme.titlebar_maximized_button_normal_inactive = "png:" .. dir ..  "/titlebar/maximized_normal_inactive.png"
+theme.titlebar_maximized_button_focus_inactive  = "png:" .. dir ..  "/titlebar/maximized_focus_inactive.png"
+theme.titlebar_maximized_button_normal_active   = "png:" .. dir ..  "/titlebar/maximized_normal_active.png"
+theme.titlebar_maximized_button_focus_active    = "png:" .. dir ..  "/titlebar/maximized_focus_active.png"
+
+return theme
+-- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80
