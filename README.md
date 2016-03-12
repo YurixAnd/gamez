@@ -1,4 +1,4 @@
 # gamez
-My configs.
-Branch "console" for settings console mode.
-Branch "gui" for settings graphical programs.
+My configs. <br>
+Branch "console" for settings console mode.<br>
+Branch "gui" for settings graphical programs.<br>
