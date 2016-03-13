@@ -462,7 +462,7 @@ awful.rules.rules = {
                      keys = clientkeys,
                      buttons = clientbuttons } },
     { rule = { class = "Gimp" },
-      properties = { floating = true, maximized_vertical = true, maximized_horizontal = true } },
+      properties = { floating = true } },
    { rule = { class = "Firefox" },
       properties = { floating = true, maximized_vertical = false, maximized_horizontal = false }, callback = function(c) awful.placement.centered(c,nil) end },
    { rule = { class = "Firefox", instance = "Navigator" },

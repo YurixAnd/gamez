@@ -20,4 +20,4 @@ run_once("exec", "setxkbmap -option\"\"") --Сброс setxkbmap
 run_once("exec", "setxkbmap -layout \"us,ru\" -option \"grp:caps_toggle,grp_led:scroll\"") --Вынести в xorg.conf и не мучаться
 run_once("kbdd")
 run_once("xkbcomp", "$DISPLAY - | egrep -v \"group . = AltGr;\" | xkbcomp - $DISPLAY") -- Хак для исправления бага awesome с раскладкой
-run_once("volti")
+run_once("volti", nil, "/usr/bin/python2.7 /usr/lib/python-exec/python2.7/volti")
