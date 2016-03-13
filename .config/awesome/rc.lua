@@ -180,7 +180,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- {{{ Wibox
 -- Create a textclock widget
-mytextclock = awful.widget.textclock()
+mytextclock = awful.widget.textclock("<span color=\"#008000\">%a %d %b %H:%M</span>")
 
 -- Create separator widget
 separator = wibox.widget.textbox()
@@ -289,7 +289,8 @@ for s = 1, screen.count() do
    -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
-    left_layout:add(separator)
+    right_layout:add(separator)
+    right_layout:add(separator)
     right_layout:add(mytextclock)
     left_layout:add(separator)
     right_layout:add(mylayoutbox[s])
