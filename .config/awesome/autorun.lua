@@ -19,3 +19,4 @@ run_once("kbdd")
 run_once("xkbcomp", "$DISPLAY - | egrep -v \"group . = AltGr;\" | xkbcomp - $DISPLAY") -- Хак для исправления бага awesome с раскладкой
 run_once("volti", nil, "/usr/bin/python2.7 /usr/lib/python-exec/python2.7/volti")
 run_once("udiskie", "-2 -t", "/usr/bin/python2.7 /usr/lib/python-exec/python2.7/udiskie")
+run_once("parcellite")
