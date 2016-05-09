@@ -11,6 +11,7 @@ beautiful = require("beautiful")
 naughty = require("naughty")
 menubar = require("menubar")
 functions = require("functions")
+keydoc = require("keydoc") 
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to

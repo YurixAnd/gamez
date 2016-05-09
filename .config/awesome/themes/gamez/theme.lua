@@ -9,7 +9,7 @@ dir                            = os.getenv("HOME") .. "/.config/awesome/themes/g
 theme.font                     = "Ubuntu 11"
 
 theme.wallpaper                = "~/.config/awesome/themes/gamez/background.png"
-theme.wallpaper_one            = "~/.config/awesome/themes/gamez/background_one.jpg"
+theme.wallpaper_one            = "~/.config/awesome/themes/gamez/background_one.png"
 theme.wallpaper_two            = "~/.config/awesome/themes/gamez/background_two.png"
 
 theme.grey                     = "#404146"
@@ -29,6 +29,9 @@ theme.fg_normal                = theme.lightgrey
 theme.fg_focus                 = theme.green
 theme.fg_urgent                = theme.red
 theme.fg_minimize              = theme.lightgrey
+theme.fg_widget_value          = theme.green
+theme.fg_widget_value_important = theme.red
+theme.fg_widget_clock          = theme.blue
 
 theme.border_width             = 1
 theme.border_normal            = theme.grey

@@ -9,7 +9,7 @@ modkey = "Mod4"
 
 -- Button scan codes
 -- Mouse
-eft_button = 1
+left_button = 1
 right_button = 3
 wheel_button = 2
 wheel_up_button = 4
@@ -43,6 +43,7 @@ key_Left = "#113"
 key_Right = "#114"
 key_Esc = "#9"
 key_PrtScn = "#107"
+key_F1 = "#67"
 
 -- {{{ Mouse bindings
 root.buttons(awful.util.table.join(
@@ -54,42 +55,48 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
-    awful.key({ modkey,           }, key_Left,   awful.tag.viewprev       ),
-    awful.key({ modkey,           }, key_Right,  awful.tag.viewnext       ),
-    awful.key({ modkey,           }, key_Esc, awful.tag.history.restore),
-
+    keydoc.group("Теги:"),
+    awful.key({ modkey,           }, key_Left,   awful.tag.viewprev, "Предыдущий тег" ),
+    awful.key({ modkey,           }, key_Right,  awful.tag.viewnext, "Следующий тег" ),
+    awful.key({ modkey,           }, key_Esc, awful.tag.history.restore, "Вернуться на последний выбранный тег" ),
+    keydoc.group("Клиенты:"),
     awful.key({ modkey,           }, key_J,
         function ()
             awful.client.focus.byidx( 1)
             if client.focus then client.focus:raise() end
-        end),
+        end, "Следующий клиент" ),
     awful.key({ modkey,           }, key_K,
         function ()
             awful.client.focus.byidx(-1)
             if client.focus then client.focus:raise() end
-        end),
-    awful.key({ modkey,           }, key_W, function () mymainmenu:show() end),
+        end, "Предыдущий клиент" ),
+    keydoc.group("Разное:"),
+    awful.key({ modkey,           }, key_W, function () mymainmenu:show() end, "Вызов меню" ),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, key_J, function () awful.client.swap.byidx(  1)    end),
     awful.key({ modkey, "Shift"   }, key_K, function () awful.client.swap.byidx( -1)    end),
-    awful.key({ modkey, "Control" }, key_J, function () awful.screen.focus_relative( 1) end),
-    awful.key({ modkey, "Control" }, key_K, function () awful.screen.focus_relative(-1) end),
-    awful.key({ modkey,           }, key_U, awful.client.urgent.jumpto),
+    keydoc.group("Экраны:"),
+    awful.key({ modkey, "Control" }, key_J, function () awful.screen.focus_relative( 1) end, "Следующий экран" ),
+    awful.key({ modkey, "Control" }, key_K, function () awful.screen.focus_relative(-1) end, "Предыдущий экран" ),
+    keydoc.group("Клиенты:"),
+    awful.key({ modkey,           }, key_U, awful.client.urgent.jumpto, "Перейти к окну с режимом повышенного внимания" ),
     awful.key({ modkey,           }, key_Tab,
         function ()
             awful.client.focus.history.previous()
             if client.focus then
                 client.focus:raise()
             end
-        end),
+        end, "Вернуться на последний выбранный клиент" ),
 
     -- Standard program
-
-    awful.key({ modkey, "Control" }, key_R,      awesome.restart),
-    awful.key({ modkey, "Shift"   }, key_Q,      awesome.quit),
-    awful.key({ modkey, "Control" }, key_N,      awful.client.restore),
-    awful.key({ modkey,           }, key_Return, function () awful.util.spawn(terminal)    end),
+    keydoc.group("Разное:"),
+    awful.key({ modkey, "Control" }, key_R,      awesome.restart, "Перезагрузка Awesome" ),
+    awful.key({ modkey, "Shift"   }, key_Q,      awesome.quit, "Выход из Awesome" ),
+    keydoc.group("Клиенты:"),
+    awful.key({ modkey, "Control" }, key_N,      awful.client.restore, "Восстановить свернутый клиент" ),
+    keydoc.group("Разное:"),
+    awful.key({ modkey,           }, key_Return, function () awful.util.spawn(terminal)    end, "Вызвать терминал"),
     awful.key({ modkey,           }, key_L,      function () awful.tag.incmwfact( 0.05)    end),
     awful.key({ modkey,           }, key_H,      function () awful.tag.incmwfact(-0.05)    end),
     awful.key({ modkey, "Shift"   }, key_H,      function () awful.tag.incnmaster( 1)      end),
@@ -101,7 +108,7 @@ globalkeys = awful.util.table.join(
 
     --Screenshot
     awful.key({                   }, key_PrtScn,  function() awful.util.spawn(screenshot) end ),
-    awful.key({"Alt"            }, key_PrtScn,  function() awful.util.spawn(windowshot) end ),
+    awful.key({ "Alt"             }, key_PrtScn,  function() awful.util.spawn(windowshot) end ),
    
    -- Prompt
     awful.key({ modkey },            key_R,     function () mypromptbox[mouse.screen]:run() end),
@@ -118,14 +125,19 @@ globalkeys = awful.util.table.join(
 )
 
 clientkeys = awful.util.table.join(
-    awful.key({ modkey,           }, key_F,      function (c) c.fullscreen = not c.fullscreen  dpms(c.fullscreen) end),
+    keydoc.group("Клиенты:"),
+    awful.key({ modkey,           }, key_F,      function (c) c.fullscreen = not c.fullscreen  dpms(c.fullscreen) end, "Полноэкранный режим"),
     awful.key({ modkey, "Shift"   }, key_C,      function (c) if c.fullscreen then c.fullscreen = not c.fullscreen dpms(c.fullscreen) end c:kill() end),
     awful.key({ modkey, "Control" }, key_Space,  awful.client.floating.toggle                     ),
     awful.key({ modkey, "Control" }, key_Return, function (c) c:swap(awful.client.getmaster()) end),
-    awful.key({ modkey,           }, key_O,      awful.client.movetoscreen                        ),
-    awful.key({ modkey,           }, key_T,      function (c) c.ontop = not c.ontop            end),
-    awful.key({ modkey,           }, key_N,      function (c) c.minimized = true               end),
-    awful.key({ modkey,           }, key_M,      function (c) c.maximized_horizontal = not c.maximized_horizontal c.maximized_vertical = not c.maximized_vertical end),
+    keydoc.group("Экраны:"),
+    awful.key({ modkey,           }, key_O,      awful.client.movetoscreen, "Отправить на другой монитор" ),
+    keydoc.group("Клиенты:"),
+    awful.key({ modkey,           }, key_T,      function (c) c.ontop = not c.ontop            end, "Закрепить на верхнем слое"),
+    awful.key({ modkey,           }, key_N,      function (c) c.minimized = true               end, "Свернуть клиент"),
+    awful.key({ modkey,           }, key_M,      function (c) c.maximized_horizontal = not c.maximized_horizontal c.maximized_vertical = not c.maximized_vertical end, "Развернуть на весь экран"),
+    awful.key({ modkey,           }, key_F1,     keydoc.display),
+
     awful.key({ modkey, "Control" }, key_I,      
         function (c)
              naughty.notify({ text = 
@@ -189,5 +201,3 @@ clientbuttons = awful.util.table.join(
 -- Set keys
 root.keys(globalkeys)
 -- }}}
-
-

@@ -17,4 +17,3 @@ if beautiful.wallpaper then
     end
 end
 -- }}}
-
