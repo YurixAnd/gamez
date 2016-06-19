@@ -9,7 +9,7 @@ naughty.config.defaults.border_color     = beautiful.notify_border
 -- {{{ Wallpaper
 if beautiful.wallpaper then
     for s = 1, screen.count() do
-    	if s==1 then
+    	if s == 1 then
 	    gears.wallpaper.maximized(beautiful.wallpaper_one, s, true)
 	else
 	    gears.wallpaper.maximized(beautiful.wallpaper_two, s, true)
