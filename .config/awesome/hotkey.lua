@@ -145,7 +145,7 @@ clientkeys = awful.util.table.join(
              "\nInstance: " .. c.instance .. 
              "\nName:     " .. c.name .. "", 
              width = 400 })
-        end)
+        end, "Информация об окне")
 )
 
 -- Bind all key numbers to tags.

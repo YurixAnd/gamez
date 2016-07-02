@@ -13,8 +13,12 @@ awful.rules.rules = {
                      buttons = clientbuttons } },
     { rule = { class = "Gimp" },
       properties = { floating = true } },
+    { rule = { class = "mpv" },
+      properties = { floating = true } },
+    { rule = { class = "Steam" },
+      properties = {floating = true, tag = tags[2][2] } },
    { rule = { class = "Firefox" },
-      properties = { floating = true, maximized_vertical = false, maximized_horizontal = false }, callback = function(c) awful.placement.centered(c,nil) end },
+      properties = { floating = true, maximized_vertical = false, maximized_horizontal = false, tag = tags[1][1] }, callback = function(c) awful.placement.centered(c,nil) end },
    { rule = { class = "Firefox", instance = "Navigator" },
       properties = { floating = true, maximized_vertical = true, maximized_horizontal = true } },
 }
