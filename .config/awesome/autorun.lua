@@ -8,3 +8,4 @@ run_once("xkbcomp", "$DISPLAY - | egrep -v \"group . = AltGr;\" | xkbcomp - $DIS
 --run_once("volti", nil, "/usr/bin/python2.7 /usr/lib/python-exec/python2.7/volti")
 run_once("udiskie", "-2 -t", "/usr/bin/python2.7 /usr/lib/python-exec/python2.7/udiskie")
 run_once("parcellite")
+run_once("nohup", "/usr/bin/linconnect_server.py >> /dev/null&")
