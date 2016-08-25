@@ -59,6 +59,9 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, key_Left,   awful.tag.viewprev, "Предыдущий тег" ),
     awful.key({ modkey,           }, key_Right,  awful.tag.viewnext, "Следующий тег" ),
     awful.key({ modkey,           }, key_Esc, awful.tag.history.restore, "Вернуться на последний выбранный тег" ),
+    awful.key({                   }, "XF86AudioRaiseVolume", apw.Up),
+    awful.key({                   }, "XF86AudioLowerVolume", apw.Down),
+    awful.key({                   }, "XF86AudioMute", apw.ToggleMute),
     keydoc.group("Клиенты:"),
     awful.key({ modkey,           }, key_J,
         function ()

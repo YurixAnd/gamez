@@ -11,7 +11,9 @@ beautiful = require("beautiful")
 naughty = require("naughty")
 menubar = require("menubar")
 functions = require("functions")
-keydoc = require("keydoc") 
+keydoc = require("keydoc")
+-- APW widget
+apw = require("apw/widget")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to

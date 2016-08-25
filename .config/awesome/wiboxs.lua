@@ -110,6 +110,8 @@ for s = 1, screen.count() do
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(separator)
     right_layout:add(separator)
+    if s == 1 then right_layout:add(apw) end
+    right_layout:add(separator)
     right_layout:add(mytextclock)
     left_layout:add(separator)
     right_layout:add(mylayoutbox[s])

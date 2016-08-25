@@ -67,5 +67,25 @@ theme.blue_circle              = dir .. "/icons/blue_circle_small.png"
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
 theme.icon_theme               = "ACYL_Icon_Theme_0.9.4"
 
+-- APW widget
+theme.volume1000               = dir .. "/icons/volume1000.png"
+theme.volume875                = dir .. "/icons/volume875.png"
+theme.volume750                = dir .. "/icons/volume750.png"
+theme.volume625                = dir .. "/icons/volume625.png"
+theme.volume500                = dir .. "/icons/volume500.png"
+theme.volume375                = dir .. "/icons/volume375.png"
+theme.volume250                = dir .. "/icons/volume250.png"
+theme.volume125                = dir .. "/icons/volume125.png"
+theme.volume000                = dir .. "/icons/volume000.png"
+theme.volume1000m              = dir .. "/icons/volume1000m.png"
+theme.volume875m               = dir .. "/icons/volume875m.png"
+theme.volume750m               = dir .. "/icons/volume750m.png"
+theme.volume625m               = dir .. "/icons/volume625m.png"
+theme.volume500m               = dir .. "/icons/volume500m.png"
+theme.volume375m               = dir .. "/icons/volume375m.png"
+theme.volume250m               = dir .. "/icons/volume250m.png"
+theme.volume125m               = dir .. "/icons/volume125m.png"
+theme.volume000m               = dir .. "/icons/volume000m.png"
+
 return theme
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80
