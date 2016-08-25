@@ -20,7 +20,7 @@ local margin_right  = 0         -- right margin in pixels of progressbar
 local margin_left   = 0         -- left margin in pixels of progressbar
 local margin_top    = 0         -- top margin in pixels of progressbar
 local margin_bottom = 0         -- bottom margin in pixels of progressbar
-local step          = 0.05      -- stepsize for volume change (ranges from 0 to 1)
+local step          = 0.125      -- stepsize for volume change (ranges from 0 to 1)
 local color         = '#698f1e' -- foreground color of progessbar
 local color_bg      = '#33450f' -- background color
 local color_mute    = '#be2a15' -- foreground color when muted
@@ -37,6 +37,8 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 local pulseaudio = require("apw.pulseaudio")
 local math = require("math")
+beautiful.init("~/.config/awesome/themes/gamez/theme.lua")
+
 -- default colors overridden by Beautiful theme
 color = beautiful.apw_fg_color or color
 color_bg = beautiful.apw_bg_color or color_bg
@@ -47,10 +49,7 @@ text_color = beautiful.apw_text_colot or text_color
 
 local p = pulseaudio:Create()
 
-local pulseBar = awful.widget.progressbar()
-
-pulseBar:set_width(width)
-pulseBar.step = step
+local pulseBar = wibox.widget.imagebox()
 
 local function make_stack(w1, w2)
     local ret = wibox.widget.base.make_widget()
@@ -82,22 +81,61 @@ else
                                             margin_top, margin_bottom)
 end
 
-function pulseWidget.setColor(mute)
-	if mute then
-		pulseBar:set_color(color_mute)
-		pulseBar:set_background_color(color_bg_mute)
-	else
-		pulseBar:set_color(color)
-		pulseBar:set_background_color(color_bg)
-	end
-end
-
 local function _update()
-	pulseBar:set_value(p.Volume)
-	pulseWidget.setColor(p.Mute)
-    if show_text then
-        pulseText:set_markup('<span color="'..text_color..'">'..math.ceil(p.Volume*100)..'%</span>')
-
+    if p.Volume == 1 then
+        if p.Mute then
+            pulseBar:set_image(theme.volume1000m)
+        else
+            pulseBar:set_image(theme.volume1000)
+        end
+    elseif p.Volume > 0.87 then
+        if p.Mute then
+            pulseBar:set_image(theme.volume875m)
+        else
+            pulseBar:set_image(theme.volume875)
+        end
+    elseif p.Volume > 0.74 then
+        if p.Mute then
+            pulseBar:set_image(theme.volume750m)
+        else
+            pulseBar:set_image(theme.volume750)
+        end
+    elseif p.Volume > 0.62 then
+        if p.Mute then
+            pulseBar:set_image(theme.volume625m)
+        else
+            pulseBar:set_image(theme.volume625)
+        end
+    elseif p.Volume > 0.49 then
+        if p.Mute then
+            pulseBar:set_image(theme.volume500m)
+        else
+            pulseBar:set_image(theme.volume500)
+        end
+    elseif p.Volume > 0.37 then
+        if p.Mute then
+            pulseBar:set_image(theme.volume375m)
+        else
+            pulseBar:set_image(theme.volume375)
+        end
+    elseif p.Volume > 0.24 then
+        if p.Mute then
+            pulseBar:set_image(theme.volume250m)
+        else
+            pulseBar:set_image(theme.volume250)
+        end
+    elseif p.Volume > 0.12 then
+        if p.Mute then
+            pulseBar:set_image(theme.volume125m)
+        else
+            pulseBar:set_image(theme.volume125)
+        end
+    else
+        if p.Mute then
+            pulseBar:set_image(theme.volume000m)
+        else
+            pulseBar:set_image(theme.volume000)
+        end
     end
 end
 
@@ -106,12 +144,12 @@ function pulseWidget.SetMixer(command)
 end
 
 function pulseWidget.Up()
-	p:SetVolume(p.Volume + pulseBar.step)
+	p:SetVolume(p.Volume + step)
 	_update()
 end
 
 function pulseWidget.Down()
-	p:SetVolume(p.Volume - pulseBar.step)
+	p:SetVolume(p.Volume - step)
 	_update()
 end
 
