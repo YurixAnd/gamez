@@ -68,3 +68,27 @@
 *color15:                 #B2B5B3
 
 *color234:                #1a1d1e
+
+!------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+
+! Use extended color scheme
+rofi.color-enabled:                  true
+! Color scheme for normal row
+#rofi.color-normal:                   argb:00000000, #1aa, argb:11FFFFFF, #1aa,#333
+rofi.color-normal:                   argb:00000000, #008000, argb:11FFFFFF, #008000,#333
+! Color scheme for urgent row
+rofi.color-urgent:                   argb:00000000, #f99, argb:11FFFFFF, #f99,#333
+! Color scheme for active row
+rofi.color-active:                   argb:00000000, #aa1, argb:11FFFFFF, #aa1,#333
+! Color scheme window
+rofi.color-window:                   argb:ee333333, #008000,008000
+! Separator style (none, dash, solid)
+rofi.separator-style:                dash
+
+rofi.terminal:                      sakura
+rofi.ssh-client:                    ssh
+rofi.run-command:                   {cmd}
+rofi.ssh-command:                   {terminal} -e {ssh-client} {host}
+rofi.run-shell-command:             {terminal} -e {cmd}

@@ -14,6 +14,12 @@ functions = require("functions")
 keydoc = require("keydoc")
 -- APW widget
 apw = require("apw/widget")
+-- Freedesktop menu
+desktop  = require("freedesktop.desktop")
+utils    = require("freedesktop.utils")
+dirs     = require("freedesktop.dirs")
+menu     = require("freedesktop.menu")
+
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -46,6 +52,7 @@ os.setlocale(os.getenv("LANG"))
 
 -- This is used later as the default programs.
 terminal   = "sakura"
+utils.terminal = terminal
 browser    = "firefox-bin" or os.getenv("BROWSER")
 editor     = "vim" or os.getenv("EDITOR")
 editor_cmd = terminal .. " -e " .. editor

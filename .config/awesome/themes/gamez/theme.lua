@@ -8,8 +8,8 @@ dir                            = os.getenv("HOME") .. "/.config/awesome/themes/g
 
 theme.font                     = "Ubuntu 11"
 
-theme.wallpaper                = "~/.config/awesome/themes/gamez/background.png"
-theme.wallpaper_one            = "~/.config/awesome/themes/gamez/background_one.png"
+--theme.wallpaper                = "~/.config/awesome/themes/gamez/background.png"
+theme.wallpaper                = "~/.config/awesome/themes/gamez/background_one.png"
 theme.wallpaper_two            = "~/.config/awesome/themes/gamez/background_two.png"
 
 theme.grey                     = "#404146"
@@ -51,7 +51,7 @@ theme.taglist_bg_focus         = "png:" .. dir .. "/icons/orange_circle.png"
 -- Variables set for theming the menu:
 theme.menu_submenu_icon        = dir .. "/icons/submenu.png"
 theme.menu_height              = 25
-theme.menu_width               = 120
+theme.menu_width               = 170
 
 -- Layout icons
 theme.awesome_icon             = dir .. "/icons/awesome16.png"
@@ -65,7 +65,7 @@ theme.blue_circle              = dir .. "/icons/blue_circle_small.png"
 
 -- Define the icon theme for application icons. If not set then the icons 
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
-theme.icon_theme               = "ACYL_Icon_Theme_0.9.4"
+theme.icon_theme               = "ACYL Icon Theme"
 
 -- APW widget
 theme.volume1000               = dir .. "/icons/volume1000.png"
