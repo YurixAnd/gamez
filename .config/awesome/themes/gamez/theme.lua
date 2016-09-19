@@ -51,7 +51,7 @@ theme.taglist_bg_focus         = "png:" .. dir .. "/icons/orange_circle.png"
 -- Variables set for theming the menu:
 theme.menu_submenu_icon        = dir .. "/icons/submenu.png"
 theme.menu_height              = 25
-theme.menu_width               = 170
+theme.menu_width               = 195
 
 -- Layout icons
 theme.awesome_icon             = dir .. "/icons/gentoo.svg"
