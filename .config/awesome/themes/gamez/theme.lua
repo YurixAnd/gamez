@@ -54,7 +54,7 @@ theme.menu_height              = 25
 theme.menu_width               = 170
 
 -- Layout icons
-theme.awesome_icon             = dir .. "/icons/awesome16.png"
+theme.awesome_icon             = dir .. "/icons/gentoo.svg"
 theme.layout_tile              = dir .. "/layouts/tile.png"
 theme.layout_tilebottom        = dir .. "/layouts/tilebottom.png"
 theme.layout_floating          = dir .. "/layouts/floating.png"
