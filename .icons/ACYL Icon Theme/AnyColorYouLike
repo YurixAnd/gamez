@@ -1,3 +1,0 @@
-#!/bin/bash
-cd ~/.icons/ACYL\ Icon\ Theme/scalable/scripts/
-exec ~/.icons/ACYL\ Icon\ Theme/scalable/scripts/script_gui.py $@

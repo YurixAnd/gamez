@@ -65,7 +65,7 @@ theme.blue_circle              = dir .. "/icons/blue_circle_small.png"
 
 -- Define the icon theme for application icons. If not set then the icons 
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
-theme.icon_theme               = "ACYL Icon Theme"
+theme.icon_theme               = "ACYLS"
 
 -- APW widget
 theme.volume1000               = dir .. "/icons/volume1000.png"
