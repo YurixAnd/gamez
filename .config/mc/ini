@@ -141,6 +141,8 @@ select_flags=6
 
 simple_swap=false
 
+panel_scroll_center=false
+
 [FindFile]
 file_case_sens=false
 file_shell_pattern=true

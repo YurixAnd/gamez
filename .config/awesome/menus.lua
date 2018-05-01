@@ -8,7 +8,7 @@ myawesomemenu = {
    { "Manual", terminal .. " -e man awesome", utils.lookup_icon({ icon = 'help' }) },
    { "Edit config", editor_cmd .. " " .. awesome.conffile, utils.lookup_icon({ icon = 'package_settings' }) },
    { "Restart", awesome.restart, utils.lookup_icon({ icon = 'gtk-refresh' }) },
-   { "Quit", awesome.quit, utils.lookup_icon({ icon = 'gtk-quit' }) }
+   { "Quit", function() awesome.quit() end, utils.lookup_icon({ icon = 'gtk-quit' }) } 
 }
 
 table.insert(menu_items, { "Awesome", myawesomemenu, beautiful.awesome_icon  })

@@ -99,7 +99,7 @@ globalkeys = awful.util.table.join(
     keydoc.group("Клиенты:"),
     awful.key({ modkey, "Control" }, key_N,      awful.client.restore, "Восстановить свернутый клиент" ),
     keydoc.group("Разное:"),
-    awful.key({ modkey,           }, key_Return, function () awful.util.spawn(terminal)    end, "Вызвать терминал"),
+    awful.key({ modkey,           }, key_Return, function () awful.spawn(terminal)    end, "Вызвать терминал"),
     awful.key({ modkey,           }, key_L,      function () awful.tag.incmwfact( 0.05)    end),
     awful.key({ modkey,           }, key_H,      function () awful.tag.incmwfact(-0.05)    end),
     awful.key({ modkey, "Shift"   }, key_H,      function () awful.tag.incnmaster( 1)      end),
@@ -110,19 +110,21 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, key_Space,  function () awful.layout.inc(layouts, -1) end),
 
     --Screenshot
-    awful.key({                   }, key_PrtScn,  function() awful.util.spawn(screenshot) end ),
-    awful.key({ "Alt"             }, key_PrtScn,  function() awful.util.spawn(windowshot) end ),
+    awful.key({                   }, key_PrtScn,  function() awful.spawn(screenshot) end, "Снимок экрана" ),
+    awful.key({ "Alt"             }, key_PrtScn,  function() awful.spawn(windowshot) end, "Снимок окна"),
    
     -- Prompt
-    awful.key({ modkey,           }, key_R, function () awful.util.spawn("rofi -show run") end, "Вызов меню" ),
+    awful.key({ modkey,           }, key_R, function () awful.spawn("rofi -show run") end, "Вызов меню" ),
     -- awful.key({ modkey },            key_R,     function () mypromptbox[mouse.screen]:run() end),
 
     awful.key({ modkey }, key_X,
               function ()
-                  awful.prompt.run({ prompt = "Run Lua code: " },
-                  mypromptbox[mouse.screen].widget,
-                  awful.util.eval, nil,
-                  awful.util.getdir("cache") .. "/history_eval")
+                  awful.prompt.run { 
+                    prompt = "Run Lua code: ",
+                    textbox = awful.screen.focused().mypromptbox.widget,
+                    exe_callback = awful.util.eval,
+                    history_path = awful.util.get_cache_dir() .. "/history_eval"
+                  }
               end),
     -- Menubar
     awful.key({ modkey }, key_P, function() menubar.show() end)
