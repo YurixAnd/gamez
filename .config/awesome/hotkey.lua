@@ -110,8 +110,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, key_Space,  function () awful.layout.inc(layouts, -1) end),
 
     --Screenshot
-    awful.key({                   }, key_PrtScn,  function() awful.spawn(screenshot) end, "Снимок экрана" ),
-    awful.key({ "Alt"             }, key_PrtScn,  function() awful.spawn(windowshot) end, "Снимок окна"),
+    awful.key({ modkey,           }, key_PrtScn,  function() awful.spawn(screenshot) end, "Снимок экрана" ),
+    awful.key({ modkey, "Alt"     }, key_PrtScn,  function() awful.spawn(windowshot) end, "Снимок окна"),
    
     -- Prompt
     awful.key({ modkey,           }, key_R, function () awful.spawn("rofi -show run") end, "Вызов меню" ),
